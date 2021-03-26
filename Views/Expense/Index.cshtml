@@ -1,0 +1,279 @@
+﻿@model IEnumerable<Icarus.Models.tblExpens>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<form id="formSearch">
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <input id="searchInput1" type="search" class="form-control mb-sm-1" placeholder="Search String" aria-label="Search" aria-describedby="search-addon" />
+        </div>
+        <div class="col-auto">
+
+        </div>
+        <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput"></label>
+        </div>
+        <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup"></label>
+            <div class="input-group mb-sm-1">
+                <input id="dateFrom" type="date" class="form-control mb-sm-1">
+                <input type="date" class="form-control  mb-sm-1">
+                <button type="button" class="btn btn-sm btn-outline-primary">Search </button>
+            </div>
+        </div>
+        <div id="button">
+            <button style="background-color: #6C7AE0; color:white!important" type="button" class="btn btn-m btn-primary" data-toggle="modal" data-target="#form">
+                @Html.ActionLink(" New", "Create")
+            </button>
+            <button style="background-color: #6C7AE0"  type="button" class="btn btn-m  btn-primary">Verified</button>
+        </div>
+    </div>
+</form>
+
+<div class="container">
+<div  class="table-responsive " id="tableForm">
+    <table id="dataTable" class="table table-striped table-hover table-borderless align-items-center">
+        <thead style="background-color: #6C7AE0; color: white;">
+            <tr>
+                <th class="tableheadleft" scope="col">
+                    @Html.DisplayNameFor(model => model.IDExpense)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ExpenseDate)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ORNumber)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Particulars)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.WithReceipt)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.IDAccount)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.EncodedBy)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.IsVerified)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ChargeToCodep)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.VATSales)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.VATAmount)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.VATExempt)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.PostedDate)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ChargedToCodep)
+                </th>
+                <th class="tableheadright" scope="col">
+                    Action
+                </th>
+
+
+            </tr>
+        </thead>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDExpense)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpenseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ORNumber)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Particulars)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WithReceipt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDAccount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EncodedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsVerified)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChargeToCodep)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VATSales)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VATAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VATExempt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChargedToCodep)
+                </td>
+            
+
+                <td>
+                    <button class="btn btn-sm btn-primary"><i class="fa fa-edit">  @Html.ActionLink(" Edit", "Edit", new { id = item.IDExpense }) </i></button>
+                    <button style="background-color:lightcoral;color:white" type="button" class="btn btn-sm  btn-primary">
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IDExpense })
+                    </button>
+                    <button style="background-color:lightyellow;color:white" type="button" class="btn btn-sm  btn-primary">
+                        @Html.ActionLink("Details", "Details", new { id = item.IDExpense })
+                    </button>
+                   
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    
+</div>
+    </div>
+    <style>
+            /* build your own custom Bootstrap theme:
+           https://themestr.app
+        */ /* build your own custom Bootstrap theme:
+           https://themestr.app
+        */
+          
+
+            .tableheadleft {
+                border-top-left-radius: 15px;
+            }
+           a{
+               color:white
+           }
+
+            .tableheadright {
+                border-top-right-radius: 15px;
+            }
+
+            #navbarSupportedContent {
+                margin-left: 45%;
+            }
+
+            #navColor {
+                color: white;
+            }
+
+            .navbar .nav-item:not(:last-child) {
+                margin-right: 35px;
+            }
+
+            .dropdown-toggle::after {
+                transition: transform 0.15s linear;
+            }
+
+            .show.dropdown .dropdown-toggle::after {
+                transform: translateY(3px);
+            }
+
+            .dropdown-menu {
+                margin-top: 0;
+            }
+
+            #tableName {
+                text-align: center
+            }
+
+            .navbar-brand {
+                color: white;
+            }
+
+            .navbar-expand-md .navbar-nav .nav-link {
+                color: white;
+            }
+
+            .search {
+                margin-left: 90%;
+                border-radius: 5px;
+                padding-right: 90px;
+            }
+
+            .isearch {
+                border-radius: 5px;
+            }
+
+            #searchBar {
+                margin-left: 5%;
+            }
+
+            #newButton {
+                margin-left: 84%;
+            }
+
+            #newButton2 {
+                margin-left: 10px;
+            }
+
+            #modalBorder {
+                border-radius: 5%;
+                background-color: #6C7AE0;
+                box-shadow: 10px 10px 5px #444D8E;
+                margin-bottom: 20%;
+            }
+
+            #formSearch {
+                margin-left: 3%;
+            }
+
+            #button {
+                margin-left: 32%;
+                padding: 6px 15px;
+            }
+
+            #searchInput1 {
+                margin-left: 2%;
+                width:150%;
+            }
+
+            #dataTable {
+                text-align: center;
+            }
+             .container {
+                  max-width: 1280px;
+              }
+             #dateFrom {
+                  margin-left: 16%;
+              }
+              .btn-outline-primary {
+                  color: white;
+                  background-color: #6C7AE0;
+              }
+    </style>
+
+
