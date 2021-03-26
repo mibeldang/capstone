@@ -132,7 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssertionsController.cs" />
     <Compile Include="Controllers\ChartOfAccountsController.cs" />
-    <Compile Include="Controllers\ExpensController.cs" />
+    <Compile Include="Controllers\ExpenseController.cs" />
     <Compile Include="Controllers\FacilityReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InquiriesController.cs" />
@@ -498,11 +498,11 @@
     <Content Include="Views\FacilityReports\Details.cshtml" />
     <Content Include="Views\FacilityReports\Edit.cshtml" />
     <Content Include="Views\FacilityReports\Index.cshtml" />
-    <Content Include="Views\Expens\Create.cshtml" />
-    <Content Include="Views\Expens\Delete.cshtml" />
-    <Content Include="Views\Expens\Details.cshtml" />
-    <Content Include="Views\Expens\Edit.cshtml" />
-    <Content Include="Views\Expens\Index.cshtml" />
+    <Content Include="Views\Expense\Create.cshtml" />
+    <Content Include="Views\Expense\Delete.cshtml" />
+    <Content Include="Views\Expense\Details.cshtml" />
+    <Content Include="Views\Expense\Edit.cshtml" />
+    <Content Include="Views\Expense\Index.cshtml" />
     <Content Include="Views\Payments\Create.cshtml" />
     <Content Include="Views\Payments\Delete.cshtml" />
     <Content Include="Views\Payments\Details.cshtml" />
